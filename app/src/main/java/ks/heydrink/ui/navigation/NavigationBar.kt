@@ -7,6 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import ks.heydrink.R
@@ -28,9 +29,9 @@ fun NavigationBar(navController: NavController) {
             NavigationBarItem(
                 icon = { Icon(
                     painter = painterResource(id = screen.iconResId),
-                    contentDescription = screen.title
+                    contentDescription = stringResource(id = screen.titleResId)
                 )  },
-                label = { Text(text = screen.title) },
+                label = { Text(text = stringResource(id = screen.titleResId)) },
                 selected = currentRoute == screen.route,
                 onClick = {
                     navController.navigate(screen.route) {

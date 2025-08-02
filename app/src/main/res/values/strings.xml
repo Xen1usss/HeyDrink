@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HeyDrink!</string>
+    <string name="home_title">Главная</string>
+    <string name="rating_title">Рейтинг</string>
+    <string name="research_title">Исследования</string>
+    <string name="profile_title">Профиль</string>
 </resources>

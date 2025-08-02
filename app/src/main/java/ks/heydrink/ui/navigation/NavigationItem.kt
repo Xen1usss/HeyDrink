@@ -1,31 +1,33 @@
 package ks.heydrink.ui.navigation
 
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import ks.heydrink.R
 
 sealed class NavigationItem(
     val route: String,
-    val title: String,
-    val iconResId: Int
+    @StringRes val titleResId: Int,
+    @DrawableRes val iconResId: Int
 ) {
 
     object Home : NavigationItem(
         "home",
-        "Главная",
+        titleResId = R.string.home_title,
         iconResId = R.drawable.ic_main
     )
     object Rating : NavigationItem(
         "rating",
-        "Рейтинг",
+        titleResId = R.string.rating_title,
         iconResId = R.drawable.ic_star
     )
     object Science : NavigationItem(
         "science",
-        "Исследования",
+        titleResId = R.string.research_title,
         iconResId = R.drawable.ic_research
     )
     object Profile : NavigationItem(
         "profile",
-        "Профиль",
+        titleResId = R.string.profile_title,
         iconResId = R.drawable.ic_person
     )
 }
