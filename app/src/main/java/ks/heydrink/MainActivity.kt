@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import ks.heydrink.ui.navigation.AppNavigation
+import ks.heydrink.ui.navigation.Navigation
 import ks.heydrink.ui.theme.HeyDrinkTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             HeyDrinkTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    AppNavigation()
+                    Navigation()
                 }
             }
         }
