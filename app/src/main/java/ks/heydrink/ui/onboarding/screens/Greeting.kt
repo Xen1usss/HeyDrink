@@ -28,7 +28,7 @@ import ks.heydrink.ui.theme.text
 fun Greeting() {
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
-            painter = painterResource(R.drawable.background_gradient),
+            painter = painterResource(R.drawable.background_gradient_first),
             contentDescription = null,
             modifier = Modifier
                 .fillMaxSize(),
