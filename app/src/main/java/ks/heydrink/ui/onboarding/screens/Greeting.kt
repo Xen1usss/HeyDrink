@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -23,9 +24,8 @@ import ks.heydrink.ui.theme.AdventPro
 import ks.heydrink.ui.theme.MontserratAlternates
 import ks.heydrink.ui.theme.text
 
-@Preview
 @Composable
-fun Greeting() {
+fun Greeting(onNextClick: () -> Unit) {
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(R.drawable.background_gradient_first),
@@ -48,31 +48,30 @@ fun Greeting() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Привет!",
+                    text = stringResource(R.string.greeting_hello),
                     fontSize = 24.sp,
                     fontFamily = AdventPro,
                     modifier = Modifier
                         .padding(24.dp)
                 )
                 Text(
-                    text = "HeyDrink!",
+                    text = stringResource(R.string.app_name),
                     fontSize = 24.sp,
                     fontWeight = FontWeight.Bold,
                     fontFamily = MontserratAlternates,
                     color = text
                 )
                 Text(
-                    text = "это Ваш персональный \n" +
-                            "гид по водному балансу",
+                    text = stringResource(R.string.greeting_subtitle),
                     fontSize = 24.sp,
                     fontWeight = FontWeight.Bold,
-                    fontFamily = MontserratAlternates
+                    fontFamily = MontserratAlternates,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                        .padding(24.dp)
                 )
                 Text(
-                    text = "Здесь Вы можете отслеживать потребление \n" +
-                            "воды, получать умные напоминания и даже \n" +
-                            "соревноваться в еженедельном рейтинге \n" +
-                            "пользователей",
+                    text = stringResource(R.string.greeting_description),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Medium,
                     fontFamily = AdventPro,
@@ -86,11 +85,9 @@ fun Greeting() {
                     .weight(1f),
                 verticalArrangement = Arrangement.spacedBy(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
-
                 ) {
                 Text(
-                    text = "Давайте познакомимся \n" +
-                            "и настроим Ваш профиль!",
+                    text = stringResource(R.string.greeting_cta),
                     fontSize = 17.sp,
                     fontWeight = FontWeight.Bold,
                     fontFamily = MontserratAlternates,
@@ -99,12 +96,18 @@ fun Greeting() {
                         .padding(24.dp)
                 )
                 OnboardingButton(
-                    text = "Приступить",
-                    onClick = { },
+                    text = stringResource(R.string.greeting_button),
+                    onClick = { onNextClick() },
                     modifier = Modifier
                         .padding(top = 48.dp)
                 )
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun Test2() {
+    Greeting({ })
 }

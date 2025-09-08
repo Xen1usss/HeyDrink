@@ -1,7 +1,34 @@
 <resources>
     <string name="app_name">HeyDrink!</string>
+
     <string name="home_title">Главная</string>
     <string name="rating_title">Рейтинг</string>
     <string name="research_title">Исследования</string>
     <string name="profile_title">Профиль</string>
+
+    <!-- Onboarding Greeting Screen -->
+    <string name="greeting_hello">Привет!</string>
+    <string name="greeting_subtitle">
+        это Ваш персональный&#10;
+        гид по водному балансу</string>
+    <string name="greeting_description">
+        Здесь Вы можете отслеживать потребление&#10;
+        воды, получать умные напоминания и даже&#10;
+        соревноваться в еженедельном рейтинге&#10;
+        пользователей
+    </string>
+    <string name="greeting_cta">
+        Давайте познакомимся&#10;
+        и настроим Ваш профиль!</string>
+    <string name="greeting_button">Приступить</string>
+
+    <!-- Onboarding TakeName Screen -->
+    <string name="take_name_hint">
+        Здесь вы можете ввести реальное&#10;
+        имя или придумать псевдоним, в&#10;
+        будущем оно отобразится в общем&#10;
+        рейтинге
+    </string>
+    <string name="take_name_placeholder">Ваше имя...</string>
+    <string name="take_name_button">Вперед</string>
 </resources>

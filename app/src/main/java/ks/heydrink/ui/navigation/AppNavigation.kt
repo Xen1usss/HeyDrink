@@ -7,13 +7,13 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import ks.heydrink.ui.onboarding.screens.Greeting
+import ks.heydrink.ui.screens.HomeScreen
 import ks.heydrink.ui.screens.ProfileScreen
 import ks.heydrink.ui.screens.RatingScreen
 import ks.heydrink.ui.screens.ScienceScreen
 
 @Composable
-fun Navigation() {
+fun AppNavigation() {
     val navController = rememberNavController() // navController-управление стеком и переходами
 
     Scaffold(
@@ -24,7 +24,7 @@ fun Navigation() {
             startDestination = "science",
             modifier = Modifier.padding(padding)
         ) {
-            composable("home") { Greeting() }
+            composable("home") { HomeScreen() }
             composable("rating") { RatingScreen() }
             composable("science") { ScienceScreen() }
             composable("profile") { ProfileScreen() }
