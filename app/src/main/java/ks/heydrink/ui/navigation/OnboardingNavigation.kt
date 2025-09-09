@@ -21,7 +21,10 @@ fun OnboardingNavigation(onFinish: () -> Unit) {
             })
         }
         composable("take_name") {
-            TakeName(onFinishClick = onFinish)
+            TakeName(
+                onFinishClick = onFinish,
+                onBackClick = { navController.popBackStack() }
+            )
         }
     }
 }
