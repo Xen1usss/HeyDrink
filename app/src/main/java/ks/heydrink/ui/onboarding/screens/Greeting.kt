@@ -4,7 +4,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -66,9 +68,7 @@ fun Greeting(onNextClick: () -> Unit) {
                     fontSize = 24.sp,
                     fontWeight = FontWeight.Bold,
                     fontFamily = MontserratAlternates,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier
-                        .padding(24.dp)
+                    textAlign = TextAlign.Center
                 )
                 Text(
                     text = stringResource(R.string.greeting_description),
@@ -83,24 +83,22 @@ fun Greeting(onNextClick: () -> Unit) {
             Column(
                 modifier = Modifier
                     .weight(1f),
-                verticalArrangement = Arrangement.spacedBy(16.dp),
+                verticalArrangement = Arrangement.spacedBy(28.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
+                Spacer(modifier = Modifier.weight(1f)) // занимает верхнюю часть нижней половины
                 Text(
                     text = stringResource(R.string.greeting_cta),
                     fontSize = 17.sp,
                     fontWeight = FontWeight.Bold,
                     fontFamily = MontserratAlternates,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier
-                        .padding(24.dp)
                 )
                 OnboardingButton(
                     text = stringResource(R.string.greeting_button),
-                    onClick = { onNextClick() },
-                    modifier = Modifier
-                        .padding(top = 48.dp)
+                    onClick = { onNextClick() }
                 )
+                Spacer(modifier = Modifier.weight(1f)) // оставляет нижнюю часть пустой, чтобы все центрировалось
             }
         }
     }
