@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -20,12 +19,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ks.heydrink.R
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
-import ks.heydrink.ui.onboarding.components.OnboardingButton
 import ks.heydrink.ui.onboarding.components.InputField
+import ks.heydrink.ui.onboarding.components.OnboardingButton
 
 
 @Composable
-fun TakeNameScreen(onFinishClick: () -> Unit) {
+fun TakeName(onFinishClick: () -> Unit) {
 
     var text by remember { mutableStateOf("Анна") }
 
@@ -39,21 +38,20 @@ fun TakeNameScreen(onFinishClick: () -> Unit) {
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+            verticalArrangement = Arrangement.spacedBy(28.dp, Alignment.CenterVertically)
         ) {
             BasicOnboardingTextStyle(
-                text = stringResource(R.string.take_name_hint),
-                modifier = Modifier.padding(24.dp)
+                text = stringResource(R.string.take_name_hint)
             )
             InputField(
                 value = text,
                 onValueChange = { text = it },
-                modifier = Modifier.padding(16.dp)
+                modifier = Modifier
             )
             OnboardingButton(
                 text = stringResource(R.string.take_name_button),
                 onClick = onFinishClick,
-                modifier = Modifier.padding(top = 15.dp)
+                modifier = Modifier
             )
         }
     }
@@ -62,5 +60,5 @@ fun TakeNameScreen(onFinishClick: () -> Unit) {
 @Preview
 @Composable
 fun TakeNameScreenPreview() {
-    TakeNameScreen(onFinishClick = {})
+    TakeName(onFinishClick = {})
 }

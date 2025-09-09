@@ -5,7 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ks.heydrink.ui.onboarding.screens.Greeting
-import ks.heydrink.ui.onboarding.screens.TakeNameScreen
+import ks.heydrink.ui.onboarding.screens.TakeName
 
 @Composable
 fun OnboardingNavigation(onFinish: () -> Unit) {
@@ -21,7 +21,7 @@ fun OnboardingNavigation(onFinish: () -> Unit) {
             })
         }
         composable("take_name") {
-            TakeNameScreen(onFinishClick = onFinish)
+            TakeName(onFinishClick = onFinish)
         }
     }
 }

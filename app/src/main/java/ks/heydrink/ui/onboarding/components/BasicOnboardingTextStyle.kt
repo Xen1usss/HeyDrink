@@ -1,5 +1,6 @@
 package ks.heydrink.ui.onboarding.components
 
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -19,6 +20,6 @@ fun BasicOnboardingTextStyle(
         fontWeight = FontWeight.Medium,
         fontFamily = MontserratAlternates,
         textAlign = TextAlign.Center,
-        modifier = Modifier
+        modifier = modifier.wrapContentWidth()
     )
 }
