@@ -1,5 +1,6 @@
 package ks.heydrink.ui.onboarding.components
 
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -27,7 +28,7 @@ fun InputField(
 ) {
 
     OutlinedTextField(
-        value = "", // то что введет пользователь
+        value = value, // то что введет пользователь
         onValueChange = onValueChange, // колбэк при изменении текста
         placeholder = {
             Text(
@@ -35,12 +36,15 @@ fun InputField(
                 color = colorPurple.copy(alpha = 0.7f),
                 fontFamily = MontserratAlternates,
                 fontSize = 20.sp,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
             )
         },
         textStyle = TextStyle( // стиль вводимого текста
             color = colorPurple,
-            fontFamily = MontserratAlternates
+            fontFamily = MontserratAlternates,
+            fontSize = 20.sp,
+            textAlign = TextAlign.Center
         ),
         colors = OutlinedTextFieldDefaults.colors(
             focusedBorderColor = colorPurple, // цвет рамки в фокусе

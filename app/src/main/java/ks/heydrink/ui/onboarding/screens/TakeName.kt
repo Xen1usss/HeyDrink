@@ -24,9 +24,11 @@ import ks.heydrink.ui.onboarding.components.OnboardingButton
 
 
 @Composable
-fun TakeName(onFinishClick: () -> Unit) {
+fun TakeName(
+    onFinishClick: () -> Unit
+) {
 
-    var text by remember { mutableStateOf("Анна") }
+    var text by remember { mutableStateOf("") }
 
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
