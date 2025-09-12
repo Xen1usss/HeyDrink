@@ -20,7 +20,7 @@ fun NavigationBar(navController: NavController) {
         NavigationItem.Profile
     )
 
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val navBackStackEntry by navController.currentBackStackEntryAsState() // слушаем, где мы сейчас
     val currentRoute = navBackStackEntry?.destination?.route
 
     NavigationBar {
@@ -31,7 +31,7 @@ fun NavigationBar(navController: NavController) {
                     contentDescription = stringResource(id = screen.titleResId)
                 )  },
                 label = { Text(text = stringResource(id = screen.titleResId)) },
-                selected = currentRoute == screen.route,
+                selected = currentRoute == screen.route, // подсветка выбранного
                 onClick = {
                     navController.navigate(screen.route) {
                         popUpTo(navController.graph.startDestinationId)

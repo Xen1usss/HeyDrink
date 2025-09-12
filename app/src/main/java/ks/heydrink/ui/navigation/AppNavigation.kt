@@ -13,16 +13,16 @@ import ks.heydrink.ui.screens.RatingScreen
 import ks.heydrink.ui.screens.ScienceScreen
 
 @Composable
-fun AppNavigation() {
+fun AppNavigation(modifier: Modifier = Modifier) {
     val navController = rememberNavController() // navController-управление стеком и переходами
 
     Scaffold(
-        bottomBar = { NavigationBar(navController) }
+        bottomBar = { NavigationBar(navController) } // нижняя навигация всегда есть
     ) { padding ->
         NavHost( // контейнер для от-я текущей дестинации из стека
             navController = navController,
             startDestination = "science",
-            modifier = Modifier.padding(padding)
+            modifier = Modifier.padding(padding) // учитываем отступы под навбар
         ) {
             composable("home") { HomeScreen() }
             composable("rating") { RatingScreen() }
