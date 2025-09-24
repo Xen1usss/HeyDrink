@@ -4,13 +4,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import ks.heydrink.ui.research.ArticleDetailScreen
+import ks.heydrink.ui.research.ScienceScreen
 import ks.heydrink.ui.screens.HomeScreen
 import ks.heydrink.ui.screens.ProfileScreen
 import ks.heydrink.ui.screens.RatingScreen
-import ks.heydrink.ui.screens.ScienceScreen
 
 @Composable
 fun AppNavigation(modifier: Modifier = Modifier) {
@@ -26,8 +29,16 @@ fun AppNavigation(modifier: Modifier = Modifier) {
         ) {
             composable("home") { HomeScreen() }
             composable("rating") { RatingScreen() }
-            composable("science") { ScienceScreen() }
+            composable("science") { ScienceScreen(navController) }
             composable("profile") { ProfileScreen() }
+
+            composable(
+                route = "article/{articleId}",
+                arguments = listOf(navArgument("articleId") { type = NavType.StringType })
+            ) { backStackEntry ->
+                val articleId = backStackEntry.arguments?.getString("articleId")
+                ArticleDetailScreen(articleId = articleId, navController = navController)
+            }
         }
     }
 }

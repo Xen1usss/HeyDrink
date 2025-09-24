@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -36,7 +35,7 @@ class MainActivity : ComponentActivity() {
                 val onboardingViewModel: OnboardingViewModel = viewModel(
                     factory = object : ViewModelProvider.Factory {
                         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                            @Suppress("UNCHECKED_CAST)")
+                            @Suppress("UNCHECKED_CAST")
                             return OnboardingViewModel(repository) as T
                         }
                     }
