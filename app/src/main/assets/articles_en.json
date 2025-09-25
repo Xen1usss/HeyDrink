@@ -36,5 +36,57 @@
         "content": "The main guide is how you feel. If you rarely feel thirsty, have good energy, your skin isn’t overly dry, and your head doesn’t feel heavy — you’re probably drinking enough. But if you notice fatigue, dry mouth, or trouble focusing, it’s a sign to pour yourself a glass of water."
       }
     ]
+  },
+  {
+    "id": "brain-water-balance",
+    "title": "How Does Water Help Keep Your Brain in Shape?",
+    "sections": [
+      {
+        "subtitle": null,
+        "content": "You’ve probably noticed that by the middle of the day, thoughts seem to slow down, focus slips away, and even simple tasks take more effort. Fatigue, stress, or lack of sleep may play a role, but there’s another factor we often overlook — not getting enough water."
+      },
+      {
+        "subtitle": "Water as Fuel for the Brain",
+        "content": "We usually think about drinking water for healthy skin, digestion, or overall well-being. But water is also vital fuel for the brain. About 75% of its structure is made up of water, and even a slight imbalance can affect mental clarity, memory, and mood."
+      },
+      {
+        "subtitle": "What Happens When Water Is Lacking",
+        "content": "A decrease in fluid levels as small as 1–2% can already influence cognitive performance. It doesn’t mean that a person becomes “less intelligent.” Rather, the brain, like any complex system, works best when everything is in balance. With too little water, it becomes harder to maintain focus, distraction increases, fatigue builds up faster, and irritability may appear without any obvious reason."
+      },
+      {
+        "subtitle": "What Research Shows",
+        "content": "These effects have been documented in scientific studies. For example, a review published in The Journal of Nutrition (2012) found that even mild dehydration can slow down information processing, weaken short-term memory, and make concentration more difficult."
+      },
+      {
+        "subtitle": "Why Thirst Is a Late Signal",
+        "content": "The brain reacts to water shortage even before you feel thirsty. By the time the body sends the “I need water” signal, it has already been working below its optimal state."
+      },
+      {
+        "subtitle": "What This Means in Practice",
+        "content": "To keep your brain in shape, it’s better to drink water regularly throughout the day rather than only when thirst appears. Keep a bottle nearby, take small sips during breaks, and make sure to drink before tasks that require focus. This simple habit can help you maintain energy, mental clarity, and productivity."
+      }
+    ]
+  },
+  {
+    "id": "brain-water-sensitivity",
+    "title": "Why Is the Brain So Sensitive to Water?",
+    "sections": [
+      {
+        "subtitle": null,
+        "content": "We often think of water as just a “filler” for the body. In reality, it plays a central role in how the brain works. It helps brain cells maintain their shape and volume, supports blood flow that delivers oxygen and nutrients, and keeps the water–electrolyte balance stable so neurons can transmit signals effectively."
+      },
+      {
+        "subtitle": "What Happens with Deficiency",
+        "content": "When fluids decrease, the brain literally changes its shape. MRI scans show that brain tissue can temporarily “shrink.” Blood flow slows, electrolyte balance is disrupted, and neurons become less efficient."
+      },
+      {
+        "subtitle": "How It Feels",
+        "content": "Imagine music recorded at lower quality. The melody is still there, but the clarity and richness are gone. The same happens with the brain: thinking doesn’t disappear, but focus and speed decline."
+      },
+      {
+        "subtitle": "What This Means for Us",
+        "content": "Even mild dehydration can affect cognitive functions. To keep your brain sharp, it’s important not to wait for strong thirst signals — instead, drink small amounts regularly throughout the day."
+      }
+    ]
   }
 ]
