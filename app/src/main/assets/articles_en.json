@@ -88,5 +88,123 @@
         "content": "Even mild dehydration can affect cognitive functions. To keep your brain sharp, it’s important not to wait for strong thirst signals — instead, drink small amounts regularly throughout the day."
       }
     ]
+  },
+  {
+    "id": "water-during-exercise",
+    "title": "Water During Exercise",
+    "sections": [
+      {
+        "subtitle": null,
+        "content": "Some people think it’s unnecessary to drink during workouts — that you can simply rehydrate afterward. But research shows that hydration is directly tied to how well the body performs under physical stress."
+      },
+      {
+        "subtitle": "Why It Matters",
+        "content": "As you move, your body heats up, and to stay cool it releases sweat. Along with sweat, you lose not just water but also key electrolytes — sodium, potassium, magnesium. These are essential for muscles and the nervous system to function smoothly. Even mild dehydration can reduce endurance and make movements less precise."
+      },
+      {
+        "subtitle": "How It Feels",
+        "content": "Losing as little as 2% of body weight through fluids already reduces reaction speed and increases fatigue. According to the American College of Sports Medicine (ACSM), this level of dehydration impairs coordination and makes usual exercises feel much harder. In hot environments or during intense sessions, dehydration can even become a health risk."
+      },
+      {
+        "subtitle": "What Research Shows",
+        "content": "Studies published in the Journal of Applied Physiology highlight that athletes who stay hydrated maintain focus longer, control their movements better, and recover faster after exercise. By contrast, insufficient water intake leads to more mistakes and a stronger sense of fatigue."
+      },
+      {
+        "subtitle": "Practical Tips",
+        "content": "The best approach is to sip small amounts of water regularly throughout your workout rather than drinking a lot at once afterward. Having a glass of water about an hour before exercise also helps."
+      }
+    ]
+  },
+  {
+    "id": "fluids-beyond-water",
+    "title": "What Counts Toward Hydration?",
+    "sections": [
+      {
+        "subtitle": null,
+        "content": "Many people assume that the “two liters a day” rule refers only to plain water. In reality, the body receives fluids from many different sources, and all of them matter."
+      },
+      {
+        "subtitle": "Drinks Beyond Water",
+        "content": "Tea, coffee, juices, milk, and even cocoa also contribute to daily hydration. For a long time, coffee and tea were thought to “dehydrate” the body because of caffeine. But modern research — including a study published in PLOS ONE (2014) — has shown that moderate caffeine intake does not negatively affect fluid balance. So yes, your morning cup of coffee does count."
+      },
+      {
+        "subtitle": "Food as a Source of Water",
+        "content": "Roughly 20% of our daily fluid intake comes from food rather than a glass. Soups, fruits, vegetables, and even yogurt are rich in water. For example, watermelon and cucumbers are composed of about 90–95% water. This means a balanced diet also helps you stay hydrated."
+      },
+      {
+        "subtitle": "Practical Perspective",
+        "content": "It’s not useful to divide drinks into “right” and “wrong.” A good approach is to make water your main source while recognizing that tea, juice, or dairy products also contribute. The key is to pay attention to how you feel and remember that hydration is the sum of many foods and drinks together."
+      }
+    ]
+  },
+  {
+    "id": "early-signs-dehydration",
+    "title": "Early Signs of Dehydration",
+    "sections": [
+      {
+        "subtitle": "Drop in Energy",
+        "content": "Even mild dehydration can cause fatigue and reduce performance. Research, including a review in Nutrients (2019), shows that losing as little as 1–2% of body weight through fluids has a clear impact on energy levels."
+      },
+      {
+        "subtitle": "Difficulty Concentrating",
+        "content": "Since the brain is about 75% water, it’s highly sensitive to dehydration. People often notice feeling more distracted, struggling to focus, or reacting more slowly when they don’t drink enough."
+      },
+      {
+        "subtitle": "Mood and Well-Being",
+        "content": "Lack of water is often reflected in irritability, headaches, or slight dizziness. These symptoms are easy to mistake for stress or tiredness, but they’re frequently linked to hydration."
+      },
+      {
+        "subtitle": "What This Means in Practice",
+        "content": "Don’t wait until you’re very thirsty. If you notice an energy dip, problems with focus, or unexplained irritability, try drinking a glass of water. Often that’s enough to feel better and restore mental clarity."
+      }
+    ]
+  },
+  {
+    "id": "water-during-cold",
+    "title": "The Role of Water During a Cold",
+    "sections": [
+      {
+        "subtitle": null,
+        "content": "When we get sick, doctors almost always recommend: “Drink more fluids.” It sounds simple, but there are strong physiological reasons behind this advice."
+      },
+      {
+        "subtitle": "Supporting Temperature Regulation",
+        "content": "With fever, the body loses more water through sweat and breathing. Extra fluids help regulate heat exchange and lower the risk of overheating."
+      },
+      {
+        "subtitle": "Restoring the Mucous Membranes",
+        "content": "During a runny nose or cough, mucous membranes dry out quickly. Adequate hydration keeps them moist, makes breathing easier, and supports mucus clearance."
+      },
+      {
+        "subtitle": "Reducing Fatigue",
+        "content": "Even mild dehydration increases feelings of weakness. Research, including a review in the Journal of Clinical Medicine (2020), confirms that maintaining hydration supports energy levels and helps the immune system function more effectively."
+      },
+      {
+        "subtitle": "What This Means in Practice",
+        "content": "During a cold, it’s important to drink regularly in small amounts. Water, warm herbal teas, and broths are especially helpful. Very sweet or carbonated drinks are best limited, as they may hinder recovery."
+      }
+    ]
+  },
+  {
+    "id": "dangers-dehydration",
+    "title": "Why Dehydration Can Be Dangerous",
+    "sections": [
+      {
+        "subtitle": "Impact on the Brain and Cognition",
+        "content": "Even a 2% drop in body fluids can impair memory, focus, and reaction speed. Prolonged dehydration increases fatigue, lowers mood, and makes irritability more likely. Research published in Nutrients (2019) highlights these cognitive effects."
+      },
+      {
+        "subtitle": "Strain on the Heart and Blood Vessels",
+        "content": "With less water, blood becomes thicker, forcing the heart to work harder. Blood pressure may fluctuate, and in hot conditions or during exercise this raises the risk of overheating and dizziness."
+      },
+      {
+        "subtitle": "Kidney and Digestive Issues",
+        "content": "Water is essential for filtering waste products. Without enough, the kidneys are put under strain, and the risk of kidney stones rises. Digestion also slows down — dehydration often leads to constipation."
+      },
+      {
+        "subtitle": "Rising Body Temperature",
+        "content": "Dehydrated bodies can’t cool down efficiently. Sweat loss outpaces replenishment, which can lead to overheating or even heat stroke."
+      }
+    ]
   }
 ]
