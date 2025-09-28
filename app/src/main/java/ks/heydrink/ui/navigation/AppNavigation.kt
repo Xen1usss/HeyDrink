@@ -9,10 +9,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import ks.heydrink.ui.profile.ProfileScreen
 import ks.heydrink.ui.research.ArticleDetailScreen
 import ks.heydrink.ui.research.ScienceScreen
 import ks.heydrink.ui.screens.HomeScreen
-import ks.heydrink.ui.screens.ProfileScreen
 import ks.heydrink.ui.screens.RatingScreen
 
 @Composable
