@@ -83,4 +83,6 @@ dependencies {
 
     // Setialization
     implementation("com.google.code.gson:gson:2.13.2")
+
+    implementation("com.google.accompanist:accompanist-navigation-animation:0.36.0")
 }

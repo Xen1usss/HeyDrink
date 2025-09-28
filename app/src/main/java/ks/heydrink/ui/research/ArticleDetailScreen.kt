@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,6 +28,8 @@ fun ArticleDetailScreen(articleId: String?, navController: NavController) {
     val article = androidx.compose.runtime.remember(articles, articleId) {
         articles.firstOrNull { it.id == articleId }
     }
+
+    val nextArticle = vm.getNextArticle(articleId)
 
     if (article == null) {
         Text(
@@ -63,6 +66,15 @@ fun ArticleDetailScreen(articleId: String?, navController: NavController) {
                 style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
+        }
+
+        nextArticle?.let {
+            Button(
+                onClick = { navController.navigate("article/${it.id}") },
+                modifier = Modifier.padding(top = 16.dp)
+            ) {
+                Text(text = "Читать далее: \"${it.title}\"")
+            }
         }
     }
 }

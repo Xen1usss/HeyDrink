@@ -38,6 +38,17 @@ class ResearchViewModel(private val repository: ArticlesRepository) : ViewModel(
             return _articles.value.firstOrNull { it.id == id }
         }
     }
+
+    fun getNextArticle(currentId: String?): Article? {
+        if (currentId == null) return null
+        val list = _articles.value
+        val index = list.indexOfFirst { it.id == currentId }
+        return if (index != -1 && index < list.lastIndex) {
+            list[index + 1]
+        } else {
+            null
+        }
+    }
 }
 
 class ResearchViewModelFactory(
