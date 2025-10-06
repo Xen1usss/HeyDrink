@@ -25,11 +25,14 @@
     <string name="greeting_button">Приступить</string>
 
     <!-- Onboarding TakeName Screen -->
+    <string name="take_name_title">
+        Давайте познакомимся!
+    </string>
     <string name="take_name_hint">
-        Здесь вы можете ввести реальное\n
-        имя или придумать псевдоним, в\n
-        будущем оно отобразится в общем\n
-        рейтинге
+        Здесь вы можете ввести реальное имя или\n
+        придумать псевдоним, в будущем оно будет\n
+        являться логином для входа в аккаунт, а еще\n
+        его увидят в рейтинге другие пользователи!
     </string>
     <string name="take_name_placeholder">Ваше имя...</string>
     <string name="take_name_button">Вперед</string>

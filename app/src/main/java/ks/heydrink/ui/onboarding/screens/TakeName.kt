@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -19,12 +20,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import ks.heydrink.R
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
 import ks.heydrink.ui.onboarding.components.InputField
 import ks.heydrink.ui.onboarding.components.OnboardingButton
+import ks.heydrink.ui.onboarding.components.TitleOnboardingTextStyle
+import ks.heydrink.ui.theme.MontserratAlternates
 
 
 @Composable
@@ -60,6 +66,9 @@ fun TakeName(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(28.dp, Alignment.CenterVertically)
         ) {
+            TitleOnboardingTextStyle(
+                text = stringResource(id = R.string.take_name_title)
+            )
             BasicOnboardingTextStyle(
                 text = stringResource(R.string.take_name_hint)
             )

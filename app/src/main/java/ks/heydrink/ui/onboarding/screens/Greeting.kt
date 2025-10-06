@@ -90,7 +90,7 @@ fun Greeting(onNextClick: () -> Unit) {
                     contentDescription = null
                 )
                 Text(
-                    text = stringResource(R.string.greeting_cta),
+                    text = stringResource(id = R.string.greeting_cta),
                     fontSize = 17.sp,
                     fontWeight = FontWeight.Bold,
                     fontFamily = MontserratAlternates,
