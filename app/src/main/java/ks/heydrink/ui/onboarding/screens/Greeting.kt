@@ -85,7 +85,10 @@ fun Greeting(onNextClick: () -> Unit) {
                 verticalArrangement = Arrangement.spacedBy(28.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
-                Spacer(modifier = Modifier.weight(1f)) // занимает верхнюю часть нижней половины
+                Image(
+                    painter = painterResource(id = R.drawable.ic_onboarding_girl),
+                    contentDescription = null
+                )
                 Text(
                     text = stringResource(R.string.greeting_cta),
                     fontSize = 17.sp,
