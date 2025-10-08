@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -20,17 +19,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import ks.heydrink.R
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
 import ks.heydrink.ui.onboarding.components.InputField
 import ks.heydrink.ui.onboarding.components.OnboardingButton
 import ks.heydrink.ui.onboarding.components.TitleOnboardingTextStyle
-import ks.heydrink.ui.theme.MontserratAlternates
 
 
 @Composable
@@ -43,7 +38,7 @@ fun TakeName(
 
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
-            painter = painterResource(R.drawable.background_gradient_second),
+            painter = painterResource(id = R.drawable.background_gradient_second),
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
@@ -56,7 +51,7 @@ fun TakeName(
                 .padding(start = 16.dp, top = 8.dp)
         ) {
             Icon(
-                painter = painterResource(R.drawable.ic_back),
+                painter = painterResource(id = R.drawable.ic_back),
                 contentDescription = null,
                 tint = androidx.compose.ui.graphics.Color.Black
             )
@@ -70,15 +65,16 @@ fun TakeName(
                 text = stringResource(id = R.string.take_name_title)
             )
             BasicOnboardingTextStyle(
-                text = stringResource(R.string.take_name_hint)
+                text = stringResource(id = R.string.take_name_description)
             )
             InputField(
                 value = text,
                 onValueChange = { text = it },
-                modifier = Modifier
+                modifier = Modifier,
+                hint = stringResource(id = R.string.take_name_hint)
             )
             OnboardingButton(
-                text = stringResource(R.string.take_name_button),
+                text = stringResource(id = R.string.onboarding_button_forward),
                 onClick = onFinishClick,
                 modifier = Modifier
             )

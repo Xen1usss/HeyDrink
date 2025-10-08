@@ -10,12 +10,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ks.heydrink.R
 import ks.heydrink.ui.theme.MontserratAlternates
 import ks.heydrink.ui.theme.colorBlue
 import ks.heydrink.ui.theme.colorPurple
@@ -24,23 +22,22 @@ import ks.heydrink.ui.theme.colorPurple
 fun InputField(
     modifier: Modifier = Modifier,
     value: String,
+    hint: String,
     onValueChange: (String) -> Unit
 ) {
-
     OutlinedTextField(
         value = value, // то что введет пользователь
         onValueChange = onValueChange, // колбэк при изменении текста
         placeholder = {
             Text(
-                text = stringResource(R.string.take_name_placeholder), // текст-подсказка
+                text = hint,
                 color = colorPurple.copy(alpha = 0.7f),
                 fontFamily = MontserratAlternates,
                 fontSize = 20.sp,
-                textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
             )
         },
-        textStyle = TextStyle( // стиль вводимого текста
+        textStyle = TextStyle(
             color = colorPurple,
             fontFamily = MontserratAlternates,
             fontSize = 20.sp,

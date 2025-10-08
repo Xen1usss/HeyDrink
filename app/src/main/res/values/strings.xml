@@ -28,12 +28,18 @@
     <string name="take_name_title">
         Давайте познакомимся!
     </string>
-    <string name="take_name_hint">
+    <string name="take_name_description">
         Здесь вы можете ввести реальное имя или\n
         придумать псевдоним, в будущем оно будет\n
         являться логином для входа в аккаунт, а еще\n
         его увидят в рейтинге другие пользователи!
     </string>
-    <string name="take_name_placeholder">Ваше имя...</string>
-    <string name="take_name_button">Вперед</string>
+    <string name="take_name_hint">Ваше имя...</string>
+    <string name="take_name_error_busy">Это имя уже занято!</string>
+    <string name="take_name_error_invalid">Можно использовать буквы, цифры, пробел и подчёркивание</string>
+
+    <!-- Onboarding Recycle components -->
+    <string name="onboarding_button_forward">Вперед</string>
+
+
 </resources>
