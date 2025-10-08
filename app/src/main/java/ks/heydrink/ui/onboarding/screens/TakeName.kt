@@ -4,7 +4,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Icon
@@ -73,12 +75,14 @@ fun TakeName(
                 modifier = Modifier,
                 hint = stringResource(id = R.string.take_name_hint)
             )
-            OnboardingButton(
-                text = stringResource(id = R.string.onboarding_button_forward),
-                onClick = onFinishClick,
-                modifier = Modifier
-            )
         }
+         OnboardingButton(
+            text = stringResource(id = R.string.onboarding_button_forward),
+            onClick = onFinishClick,
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .padding(bottom = 140.dp)
+         )
     }
 }
 
