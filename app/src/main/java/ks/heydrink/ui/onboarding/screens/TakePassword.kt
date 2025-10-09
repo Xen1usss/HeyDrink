@@ -27,16 +27,15 @@ import ks.heydrink.ui.onboarding.components.InputField
 import ks.heydrink.ui.onboarding.components.OnboardingButton
 import ks.heydrink.ui.onboarding.components.TitleOnboardingTextStyle
 
-
 @Composable
-fun TakeName(
+fun TakePassword(
     onFinishClick: () -> Unit,
     onBackClick: () -> Unit
 ) {
-
     var text by remember { mutableStateOf("") }
 
     Box(modifier = Modifier.fillMaxSize()) {
+
         Image(
             painter = painterResource(id = R.drawable.background_gradient_second),
             contentDescription = null,
@@ -64,30 +63,30 @@ fun TakeName(
             verticalArrangement = Arrangement.spacedBy(28.dp, Alignment.CenterVertically)
         ) {
             TitleOnboardingTextStyle(
-                text = stringResource(id = R.string.take_name_title)
+                text = stringResource(id = R.string.take_password_title)
             )
             BasicOnboardingTextStyle(
-                text = stringResource(id = R.string.take_name_description)
+                text = stringResource(id = R.string.take_password_description)
             )
             InputField(
                 value = text,
                 onValueChange = { text = it },
                 modifier = Modifier,
-                hint = stringResource(id = R.string.take_name_hint)
+                hint = stringResource(id = R.string.take_password_hint)
             )
         }
-         OnboardingButton(
+        OnboardingButton(
             text = stringResource(id = R.string.onboarding_button_forward),
             onClick = onFinishClick,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 140.dp)
-         )
+        )
     }
 }
 
 @Preview
 @Composable
-fun TakeNameScreenPreview() {
-    TakeName(onFinishClick = {}, onBackClick = {})
+fun TakePasswordScreenPreview() {
+    TakePassword(onFinishClick = {}, onBackClick = {})
 }

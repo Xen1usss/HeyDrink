@@ -38,6 +38,16 @@
     <string name="take_name_error_busy">Это имя уже занято!</string>
     <string name="take_name_error_invalid">Можно использовать буквы, цифры, пробел и подчёркивание</string>
 
+    <!-- Onboarding TakePassword Screen -->
+    <string name="take_password_hint">Ваш пароль...</string>
+    <string name="take_password_title">Теперь давайте придумаем пароль для вашего аккаунта!</string>
+    <string name="take_password_description">
+        Чтобы быть максимально надежным, пароль\n
+        должен иметь не менее 6 символов, минимум\n
+        одну заглавную букву, минимум одну цифру
+    </string>
+
+
     <!-- Onboarding Recycle components -->
     <string name="onboarding_button_forward">Вперед</string>
 

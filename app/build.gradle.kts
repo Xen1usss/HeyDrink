@@ -80,8 +80,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
-    // Setialization
+    // Serialization
     implementation("com.google.code.gson:gson:2.13.2")
 
     implementation("com.google.accompanist:accompanist-navigation-animation:0.36.0")
+
+    implementation("androidx.compose.material:material-icons-extended")
 }
