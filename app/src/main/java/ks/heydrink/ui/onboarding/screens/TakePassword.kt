@@ -23,13 +23,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ks.heydrink.R
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
-import ks.heydrink.ui.onboarding.components.LoginInputField
 import ks.heydrink.ui.onboarding.components.OnboardingButton
+import ks.heydrink.ui.onboarding.components.PasswordInputField
 import ks.heydrink.ui.onboarding.components.TitleOnboardingTextStyle
 
 @Composable
 fun TakePassword(
-    onFinishClick: () -> Unit,
+    onNextClick: () -> Unit,
     onBackClick: () -> Unit
 ) {
     var text by remember { mutableStateOf("") }
@@ -68,7 +68,7 @@ fun TakePassword(
             BasicOnboardingTextStyle(
                 text = stringResource(id = R.string.take_password_description)
             )
-            LoginInputField(
+            PasswordInputField(
                 value = text,
                 onValueChange = { text = it },
                 modifier = Modifier,
@@ -77,7 +77,7 @@ fun TakePassword(
         }
         OnboardingButton(
             text = stringResource(id = R.string.onboarding_button_forward),
-            onClick = onFinishClick,
+            onClick = onNextClick,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 140.dp)
@@ -88,5 +88,5 @@ fun TakePassword(
 @Preview
 @Composable
 fun TakePasswordScreenPreview() {
-    TakePassword(onFinishClick = {}, onBackClick = {})
+    TakePassword(onNextClick = {}, onBackClick = {})
 }

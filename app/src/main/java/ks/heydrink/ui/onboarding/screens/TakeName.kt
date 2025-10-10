@@ -30,7 +30,7 @@ import ks.heydrink.ui.onboarding.components.TitleOnboardingTextStyle
 
 @Composable
 fun TakeName(
-    onFinishClick: () -> Unit,
+    onNextClick: () -> Unit,
     onBackClick: () -> Unit
 ) {
 
@@ -78,7 +78,7 @@ fun TakeName(
         }
          OnboardingButton(
             text = stringResource(id = R.string.onboarding_button_forward),
-            onClick = onFinishClick,
+            onClick = onNextClick,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 140.dp)
@@ -89,5 +89,5 @@ fun TakeName(
 @Preview
 @Composable
 fun TakeNameScreenPreview() {
-    TakeName(onFinishClick = {}, onBackClick = {})
+    TakeName(onNextClick = {}, onBackClick = {})
 }

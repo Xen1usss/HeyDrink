@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -11,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -23,7 +26,13 @@ fun LoginInputField(
     modifier: Modifier = Modifier,
     value: String,
     hint: String,
-    onValueChange: (String) -> Unit
+    onValueChange: (String) -> Unit,
+    visualTransformation: VisualTransformation = VisualTransformation.None, // видно вводимое или нет?
+    trailingIcon: (@Composable (() -> Unit))? = null, // иконка глаза справа
+    keyboardOptions: KeyboardOptions = KeyboardOptions.Default.copy(
+        keyboardType = KeyboardType.Text
+    ),
+    isError: Boolean = false, // ошибка?
 ) {
     OutlinedTextField(
         value = value, // то что введет пользователь
@@ -58,6 +67,10 @@ fun LoginInputField(
         modifier = modifier
             .width(287.dp)
             .height(63.dp),
-        singleLine = true
+        singleLine = true,
+        visualTransformation = visualTransformation,
+        trailingIcon = trailingIcon,
+        keyboardOptions = keyboardOptions,
+        isError = isError,
     )
 }
