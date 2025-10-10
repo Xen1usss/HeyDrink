@@ -23,7 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ks.heydrink.R
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
-import ks.heydrink.ui.onboarding.components.InputField
+import ks.heydrink.ui.onboarding.components.LoginInputField
 import ks.heydrink.ui.onboarding.components.OnboardingButton
 import ks.heydrink.ui.onboarding.components.TitleOnboardingTextStyle
 
@@ -69,7 +69,7 @@ fun TakeName(
             BasicOnboardingTextStyle(
                 text = stringResource(id = R.string.take_name_description)
             )
-            InputField(
+            LoginInputField(
                 value = text,
                 onValueChange = { text = it },
                 modifier = Modifier,
