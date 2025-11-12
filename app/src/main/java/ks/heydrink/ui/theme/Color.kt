@@ -16,3 +16,4 @@ val text = Color(0xFF7A7AF3)
 // мои
 val colorPurple = Color(0xFFA3A0C7)
 val colorBlue = Color(0xFF99C4FF)
+val colorDarkBlue = Color(0xFF4894DB)

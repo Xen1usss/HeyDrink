@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -19,13 +21,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import ks.heydrink.R
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
 import ks.heydrink.ui.onboarding.components.LoginInputField
 import ks.heydrink.ui.onboarding.components.OnboardingButton
 import ks.heydrink.ui.onboarding.components.TitleOnboardingTextStyle
+import ks.heydrink.ui.theme.MontserratAlternates
+import ks.heydrink.ui.theme.colorDarkBlue
 
 
 @Composable
@@ -75,6 +82,19 @@ fun TakeName(
                 modifier = Modifier,
                 hint = stringResource(id = R.string.take_name_hint)
             )
+            TextButton(
+                onClick = { }
+            ) {
+                Text(
+                    text = stringResource(id = R.string.i_have_account),
+                    color = colorDarkBlue,
+                    style = TextStyle(
+                        fontFamily = MontserratAlternates,
+                        fontSize = 15.sp,
+                        textDecoration = TextDecoration.Underline
+                    )
+                )
+            }
         }
          OnboardingButton(
             text = stringResource(id = R.string.onboarding_button_forward),

@@ -37,6 +37,7 @@
     <string name="take_name_hint">Ваше имя...</string>
     <string name="take_name_error_busy">Это имя уже занято!</string>
     <string name="take_name_error_invalid">Можно использовать буквы, цифры, пробел и подчёркивание</string>
+    <string name="i_have_account">У меня уже есть аккаунт</string>
 
     <!-- Onboarding TakePassword Screen -->
     <string name="take_password_hint">Ваш пароль...</string>
@@ -47,6 +48,11 @@
         одну заглавную букву, минимум одну цифру
     </string>
 
+    <!-- Onboarding TakePassword Screen -->
+    <string name="take_avatar_description">
+        Выберите аватар для себя, его смогут\n
+        увидеть другие пользователи
+    </string>
 
     <!-- Onboarding Recycle components -->
     <string name="onboarding_button_forward">Вперед</string>
