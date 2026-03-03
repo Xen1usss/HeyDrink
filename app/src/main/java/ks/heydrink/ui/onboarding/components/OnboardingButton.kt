@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -37,10 +38,11 @@ fun OnboardingButton(
             .width(287.dp)
             .height(63.dp),
         colors = ButtonDefaults.buttonColors(
-            containerColor = Color.Transparent // Прозрачный, чтобы показать градиент
+            containerColor = Color.Transparent
         ),
-        shape = RoundedCornerShape(31.5.dp), // Половина высоты для полного скругления
-        contentPadding = PaddingValues(0.dp)
+        shape = RoundedCornerShape(31.5.dp),
+        contentPadding = PaddingValues(0.dp),
+        elevation = ButtonDefaults.buttonElevation()
     ) {
         Box(
             modifier = Modifier
@@ -48,8 +50,8 @@ fun OnboardingButton(
                 .background(
                     brush = Brush.horizontalGradient(
                         colors = listOf(
-                            Color(0xFF8599FC), // Левый цвет
-                            Color(0xFFBE9DFF)  // Правый цвет
+                            Color(0xFF8599FC),
+                            Color(0xFFBE9DFF)
                         )
                     ),
                     shape = RoundedCornerShape(31.5.dp)

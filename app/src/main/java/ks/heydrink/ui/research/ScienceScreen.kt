@@ -27,14 +27,14 @@ fun ScienceScreen(navController: NavController) {
     val context = LocalContext.current.applicationContext
     val repo = androidx.compose.runtime.remember { ArticlesRepositoryImpl(context) }
     val vm: ResearchViewModel = viewModel(factory = ResearchViewModelFactory(repo))
-    val articles by vm.articles.collectAsState()
+//    val articles by vm.articles.collectAsState()
 
-    ArticleList(
-        articles = articles,
-        onArticleClick = { articleId ->
-            navController.navigate("article/$articleId")
-        }
-    )
+//    ArticleList(
+//        articles = articles,
+//        onArticleClick = { articleId ->
+//            navController.navigate("article/$articleId")
+//        }
+//    )
 }
 
 @Composable

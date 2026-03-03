@@ -10,7 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import ks.heydrink.ui.profile.ProfileScreen
-import ks.heydrink.ui.research.ArticleDetailScreen
+//import ks.heydrink.ui.research.ArticleDetailScreen
 import ks.heydrink.ui.research.ScienceScreen
 import ks.heydrink.ui.screens.HomeScreen
 import ks.heydrink.ui.screens.RatingScreen
@@ -37,7 +37,7 @@ fun AppNavigation(modifier: Modifier = Modifier) {
                 arguments = listOf(navArgument("articleId") { type = NavType.StringType })
             ) { backStackEntry ->
                 val articleId = backStackEntry.arguments?.getString("articleId")
-                ArticleDetailScreen(articleId = articleId, navController = navController)
+//                ArticleDetailScreen(articleId = articleId, navController = navController)
             }
         }
     }

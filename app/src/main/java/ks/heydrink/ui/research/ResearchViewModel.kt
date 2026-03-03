@@ -1,5 +1,6 @@
 package ks.heydrink.ui.research
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
@@ -12,7 +13,6 @@ import ks.heydrink.domain.repository.ArticlesRepository
 class ResearchViewModel(private val repository: ArticlesRepository) : ViewModel() {
 
     private val _articles = MutableStateFlow<List<Article>>(emptyList())
-    val articles: StateFlow<List<Article>> = _articles
 
     init {
         loadArticles()

@@ -65,10 +65,9 @@ fun TakeName(
         }
         Column(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(bottom = 150.dp),
+                .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(28.dp, Alignment.CenterVertically)
+            verticalArrangement = Arrangement.spacedBy(30.dp, Alignment.CenterVertically)
         ) {
             TitleOnboardingTextStyle(
                 text = stringResource(id = R.string.take_name_title)
@@ -76,33 +75,37 @@ fun TakeName(
             BasicOnboardingTextStyle(
                 text = stringResource(id = R.string.take_name_description)
             )
-            LoginInputField(
-                value = text,
-                onValueChange = { text = it },
-                modifier = Modifier,
-                hint = stringResource(id = R.string.take_name_hint)
-            )
-            TextButton(
-                onClick = { }
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                Text(
-                    text = stringResource(id = R.string.i_have_account),
-                    color = colorDarkBlue,
-                    style = TextStyle(
-                        fontFamily = MontserratAlternates,
-                        fontSize = 15.sp,
-                        textDecoration = TextDecoration.Underline
-                    )
+                LoginInputField(
+                    value = text,
+                    onValueChange = { text = it },
+                    modifier = Modifier,
+                    hint = stringResource(id = R.string.take_name_hint)
                 )
+                TextButton(
+                    onClick = { }
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.i_have_account),
+                        color = colorDarkBlue,
+                        style = TextStyle(
+                            fontFamily = MontserratAlternates,
+                            fontSize = 15.sp,
+                            textDecoration = TextDecoration.Underline
+                        )
+                    )
+                }
             }
         }
-         OnboardingButton(
+        OnboardingButton(
             text = stringResource(id = R.string.onboarding_button_forward),
             onClick = onNextClick,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 140.dp)
-         )
+        )
     }
 }
 

@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "ks.heydrink"
-    compileSdk = 36
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "ks.heydrink"

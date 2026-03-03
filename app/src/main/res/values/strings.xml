@@ -26,7 +26,8 @@
 
     <!-- Onboarding TakeName Screen -->
     <string name="take_name_title">
-        Давайте познакомимся!
+        Давайте\n
+        познакомимся!
     </string>
     <string name="take_name_description">
         Здесь вы можете ввести реальное имя или\n
@@ -38,6 +39,10 @@
     <string name="take_name_error_busy">Это имя уже занято!</string>
     <string name="take_name_error_invalid">Можно использовать буквы, цифры, пробел и подчёркивание</string>
     <string name="i_have_account">У меня уже есть аккаунт</string>
+
+    <!-- Onboarding AlreadyHaveAccount Screen -->
+    <string name="have_we_met_yet">Так мы знакомы?!</string>
+    <string name="then_enter_your_details">Тогда введите ваши данные!</string>
 
     <!-- Onboarding TakePassword Screen -->
     <string name="take_password_hint">Ваш пароль...</string>
