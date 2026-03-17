@@ -1,15 +1,19 @@
 package ks.heydrink.ui.research
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlinx.serialization.Serializable
+import ks.heydrink.data.repository.ArticlesRepositoryImpl
 import ks.heydrink.domain.model.Article
 import ks.heydrink.domain.repository.ArticlesRepository
+import javax.inject.Inject
 
+@HiltViewModel
 class ResearchViewModel(private val repository: ArticlesRepository) : ViewModel() {
 
     private val _articles = MutableStateFlow<List<Article>>(emptyList())
@@ -50,16 +54,3 @@ class ResearchViewModel(private val repository: ArticlesRepository) : ViewModel(
         }
     }
 }
-
-class ResearchViewModelFactory(
-    private val repository: ArticlesRepository
-) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(ResearchViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return ResearchViewModel(repository) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
-    }
-}
-

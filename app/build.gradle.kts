@@ -1,9 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.android.ksp)
-//    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.android.hilt)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -33,12 +33,9 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_23
+        targetCompatibility = JavaVersion.VERSION_23
     }
-//    kotlinOptions {
-//        jvmTarget = "1.8"
-//    }
     buildFeatures {
         compose = true
     }
@@ -48,12 +45,6 @@ android {
         }
     }
 }
-
-//
-//kotlin {
-//    // Adding this solved it
-//    jvmToolchain(8)
-//}
 
 dependencies {
 
@@ -67,6 +58,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.datastore.core.android)
     implementation(libs.core.ktx)
+    implementation(libs.androidx.core.core.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
