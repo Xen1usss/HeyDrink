@@ -26,7 +26,7 @@ import ks.heydrink.domain.model.Article
 fun ScienceScreen(navController: NavController) {
     val context = LocalContext.current.applicationContext
     val repo = androidx.compose.runtime.remember { ArticlesRepositoryImpl(context) }
-    val vm: ResearchViewModel = viewModel(factory = ResearchViewModelFactory(repo))
+    val vm: ResearchViewModel = viewModel()
 //    val articles by vm.articles.collectAsState()
 
 //    ArticleList(
