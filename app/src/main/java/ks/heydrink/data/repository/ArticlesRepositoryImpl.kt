@@ -13,8 +13,10 @@ import ks.heydrink.data.articles.mapper.toDomain
 import ks.heydrink.domain.model.Article
 import ks.heydrink.domain.repository.ArticlesRepository
 import java.util.Locale
+import javax.inject.Inject
 
-class ArticlesRepositoryImpl(
+
+class ArticlesRepositoryImpl @Inject constructor(
     private val context: Context // контекст нужен для доступа к файлам assets
 ) : ArticlesRepository {
 
