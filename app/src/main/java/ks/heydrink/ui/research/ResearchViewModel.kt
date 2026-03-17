@@ -1,12 +1,11 @@
 package ks.heydrink.ui.research
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlinx.serialization.Serializable
 import ks.heydrink.domain.model.Article
 import ks.heydrink.domain.repository.ArticlesRepository
 
@@ -62,4 +61,3 @@ class ResearchViewModelFactory(
         throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
     }
 }
-
