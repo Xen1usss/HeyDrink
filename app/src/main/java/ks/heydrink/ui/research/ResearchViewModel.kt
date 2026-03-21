@@ -14,7 +14,7 @@ import ks.heydrink.domain.repository.ArticlesRepository
 import javax.inject.Inject
 
 @HiltViewModel
-class ResearchViewModel @Inject constructor(private val repository: ArticlesRepository) : ViewModel() {
+class ResearchViewModel @Inject constructor(private val repository: ArticlesRepositoryImpl) : ViewModel() {
 
     private val _articles = MutableStateFlow<List<Article>>(emptyList())
 

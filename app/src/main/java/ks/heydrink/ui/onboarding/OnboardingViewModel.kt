@@ -13,7 +13,7 @@ import ks.heydrink.domain.repository.OnboardingRepository
 import javax.inject.Inject
 
 @HiltViewModel
-class OnboardingViewModel @Inject constructor (private val repo: OnboardingRepository) : ViewModel() {
+class OnboardingViewModel @Inject constructor(private val repo: OnboardingRepository) : ViewModel() {
 
     // StateFlow — удобно подписываться в Compose через collectAsState()
     val onboardingCompletedFlow: StateFlow<Boolean?> = repo.onboardingCompleted

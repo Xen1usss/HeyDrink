@@ -1,16 +1,23 @@
 package ks.heydrink.data
 
 import android.content.Context
+import android.util.Log
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
-import kotlinx.coroutines.flow.map
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+import java.lang.annotation.ElementType
+import java.lang.annotation.Target
 import javax.inject.Inject
+import javax.inject.Qualifier
 
 private val Context.dataStore by preferencesDataStore(name = "settings") // точка входа для работы с хранилищем
 
-class OnboardingPreferences @Inject constructor (private val context: Context) {
+class OnboardingPreferences @Inject constructor(
+    @ApplicationContext private val context: Context
+) {
 
     companion object {
         private val ONBOARDING_COMPLETED = booleanPreferencesKey("onboarding_completed")

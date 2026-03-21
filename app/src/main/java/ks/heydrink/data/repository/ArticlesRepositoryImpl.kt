@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -17,7 +18,7 @@ import javax.inject.Inject
 
 
 class ArticlesRepositoryImpl @Inject constructor(
-    private val context: Context // контекст нужен для доступа к файлам assets
+    @param:ApplicationContext private val context: Context // контекст нужен для доступа к файлам assets
 ) : ArticlesRepository {
 
     private val gson = Gson()

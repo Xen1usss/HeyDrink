@@ -4,7 +4,9 @@ import kotlinx.coroutines.flow.Flow
 import ks.heydrink.data.OnboardingPreferences
 import ks.heydrink.domain.repository.OnboardingRepository
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class OnboardingRepositoryImpl @Inject constructor(
     private val prefs: OnboardingPreferences
 ) : OnboardingRepository {
