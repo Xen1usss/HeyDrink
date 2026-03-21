@@ -6,10 +6,11 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
 private val Context.dataStore by preferencesDataStore(name = "settings") // точка входа для работы с хранилищем
 
-class OnboardingPreferences(private val context: Context) {
+class OnboardingPreferences @Inject constructor (private val context: Context) {
 
     companion object {
         private val ONBOARDING_COMPLETED = booleanPreferencesKey("onboarding_completed")
