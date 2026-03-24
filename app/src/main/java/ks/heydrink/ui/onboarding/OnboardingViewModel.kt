@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import ks.heydrink.data.repository.OnboardingRepositoryImpl
+import ks.heydrink.domain.model.RegistrationState
 import ks.heydrink.domain.repository.OnboardingRepository
 import javax.inject.Inject
 
@@ -18,6 +19,8 @@ class OnboardingViewModel @Inject constructor(private val repo: OnboardingReposi
     // StateFlow — удобно подписываться в Compose через collectAsState()
     val onboardingCompletedFlow: StateFlow<Boolean?> = repo.onboardingCompleted
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
+
+    val stateFlow: StateFlow<RegistrationState>
 
     fun completeOnboarding() {
         viewModelScope.launch {
