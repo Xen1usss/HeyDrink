@@ -36,7 +36,7 @@ import ks.heydrink.ui.theme.colorDarkBlue
 
 
 @Composable
-fun TakeName(
+fun TakeNameScreen(
     onNextClick: () -> Unit,
     onBackClick: () -> Unit
 ) {
@@ -112,5 +112,5 @@ fun TakeName(
 @Preview
 @Composable
 fun TakeNameScreenPreview() {
-    TakeName(onNextClick = {}, onBackClick = {})
+    TakeNameScreen(onNextClick = {}, onBackClick = {})
 }

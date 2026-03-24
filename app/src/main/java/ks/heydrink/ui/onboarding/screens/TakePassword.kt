@@ -28,7 +28,7 @@ import ks.heydrink.ui.onboarding.components.PasswordInputField
 import ks.heydrink.ui.onboarding.components.TitleOnboardingTextStyle
 
 @Composable
-fun TakePassword(
+fun TakePasswordScreen(
     onNextClick: () -> Unit,
     onBackClick: () -> Unit
 ) {
@@ -88,5 +88,5 @@ fun TakePassword(
 @Preview
 @Composable
 fun TakePasswordScreenPreview() {
-    TakePassword(onNextClick = {}, onBackClick = {})
+    TakePasswordScreen(onNextClick = {}, onBackClick = {})
 }

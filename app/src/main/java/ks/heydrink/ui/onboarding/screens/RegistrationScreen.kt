@@ -15,11 +15,11 @@ fun RegistrationScreen() {
     val state: RegistrationState = viewModel.stateFlow.collectAsState().value
 
     if (!state.isUsernameConfirmed) {
-        TakeName(onNextClick = {}, onBackClick = {})
+        TakeNameScreen(onNextClick = {}, onBackClick = {})
     } else if (!state.isPasswordConfirmed) {
-        TakePassword(onNextClick = {}, onBackClick = {})
+        TakePasswordScreen(onNextClick = {}, onBackClick = {})
     } else {
-        TakeAvatar(onNextClick = {}, onBackClick = {})
+        TakeAvatarScreen(onNextClick = {}, onBackClick = {})
     }
 
 

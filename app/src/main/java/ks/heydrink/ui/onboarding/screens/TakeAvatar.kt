@@ -21,7 +21,7 @@ import ks.heydrink.R
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
 
 @Composable
-fun TakeAvatar(
+fun TakeAvatarScreen(
     onNextClick: () -> Unit,
     onBackClick: () -> Unit
 ) {
@@ -66,6 +66,6 @@ fun TakeAvatar(
 @Preview
 @Composable
 fun TakeAvatarScreenPreview() {
-    TakeAvatar(onNextClick = {}, onBackClick = {})
+    TakeAvatarScreen(onNextClick = {}, onBackClick = {})
 }
 
