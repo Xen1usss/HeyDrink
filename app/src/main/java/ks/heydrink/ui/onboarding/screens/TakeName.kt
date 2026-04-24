@@ -27,7 +27,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ks.heydrink.R
-import ks.heydrink.ui.onboarding.OnboardingViewModel
+import ks.heydrink.domain.model.UsernameStep
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
 import ks.heydrink.ui.onboarding.components.LoginInputField
 import ks.heydrink.ui.onboarding.components.OnboardingButton
@@ -40,11 +40,10 @@ import ks.heydrink.ui.theme.colorDarkBlue
 fun TakeNameScreen(
     onNextClick: () -> Unit,
     onBackClick: () -> Unit,
-    viewModel: OnboardingViewModel
+    state: UsernameStep
 ) {
 
     var text by remember { mutableStateOf("") }
-    val state by viewModel.stateFlow.collectAsState()
 
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
@@ -85,7 +84,7 @@ fun TakeNameScreen(
                     value = text,
                     onValueChange = { text = it },
                     modifier = Modifier,
-                    hint = state.usernameText
+                    hint = stringResource(id = R.string.take_name_hint)
                 )
                 TextButton(
                     onClick = { }

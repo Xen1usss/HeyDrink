@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import ks.heydrink.domain.model.RegistrationState
+import ks.heydrink.domain.model.UsernameStep
 import ks.heydrink.domain.repository.OnboardingRepository
 import javax.inject.Inject
 
@@ -19,7 +20,7 @@ class OnboardingViewModel @Inject constructor(private val repo: OnboardingReposi
     val onboardingCompletedFlow: StateFlow<Boolean?> = repo.onboardingCompleted
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
 
-    private val _stateFlow = MutableStateFlow(RegistrationState())
+    private val _stateFlow = MutableStateFlow<RegistrationState>(UsernameStep(""))
     val stateFlow: StateFlow<RegistrationState> = _stateFlow
 
     fun completeOnboarding() {
