@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ks.heydrink.ui.onboarding.screens.Greeting
+import ks.heydrink.ui.onboarding.screens.RegistrationScreen
 import ks.heydrink.ui.onboarding.screens.TakeNameScreen
 import ks.heydrink.ui.onboarding.screens.TakePasswordScreen
 
@@ -26,12 +27,7 @@ fun OnboardingNavigation(
             })
         }
         composable("take_name") {
-            TakeNameScreen(
-                onNextClick = {
-                    navController.navigate("take_password")
-                },
-                onBackClick = { navController.popBackStack() }
-            )
+            RegistrationScreen() // fixme
         }
         composable("take_password") {
             TakePasswordScreen(
