@@ -12,13 +12,9 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -27,9 +23,11 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ks.heydrink.R
+import ks.heydrink.domain.model.NewUsernameIntent
 import ks.heydrink.domain.model.UsernameStep
+import ks.heydrink.ui.onboarding.RegistrationViewModel
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
-import ks.heydrink.ui.onboarding.components.LoginInputField
+import ks.heydrink.ui.onboarding.components.InputField
 import ks.heydrink.ui.onboarding.components.OnboardingButton
 import ks.heydrink.ui.onboarding.components.TitleOnboardingTextStyle
 import ks.heydrink.ui.theme.MontserratAlternates
@@ -40,10 +38,9 @@ import ks.heydrink.ui.theme.colorDarkBlue
 fun TakeNameScreen(
     onNextClick: () -> Unit,
     onBackClick: () -> Unit,
-    state: UsernameStep
+    currentState: UsernameStep,
+    viewModel: RegistrationViewModel
 ) {
-
-    var text by remember { mutableStateOf("") }
 
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
@@ -62,7 +59,7 @@ fun TakeNameScreen(
             Icon(
                 painter = painterResource(id = R.drawable.ic_back),
                 contentDescription = null,
-                tint = androidx.compose.ui.graphics.Color.Black
+                tint = Color.Black
             )
         }
         Column(
@@ -80,10 +77,9 @@ fun TakeNameScreen(
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                LoginInputField(
-                    value = text,
-                    onValueChange = { text = it },
-                    modifier = Modifier,
+                InputField(
+                    value = currentState.username,
+                    onValueChange = { viewModel.onNewIntent(NewUsernameIntent(it)) },
                     hint = stringResource(id = R.string.take_name_hint)
                 )
                 TextButton(

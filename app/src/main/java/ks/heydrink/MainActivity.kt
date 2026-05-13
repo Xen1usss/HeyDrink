@@ -9,14 +9,11 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dagger.hilt.android.AndroidEntryPoint
-import ks.heydrink.data.repository.OnboardingRepositoryImpl
 import ks.heydrink.ui.navigation.AppNavigation
 import ks.heydrink.ui.navigation.OnboardingNavigation
-import ks.heydrink.ui.onboarding.OnboardingViewModel
+import ks.heydrink.ui.onboarding.RegistrationViewModel
 import ks.heydrink.ui.onboarding.screens.LoadingScreen
 import ks.heydrink.ui.theme.HeyDrinkTheme
 
@@ -29,10 +26,10 @@ class MainActivity : ComponentActivity() {
             HeyDrinkTheme {
 
 
-                val onboardingViewModel: OnboardingViewModel = viewModel()
+                val registrationViewModel: RegistrationViewModel = viewModel()
 
                 // подписываемся на состояние
-                val onboardingCompleted by onboardingViewModel
+                val onboardingCompleted by registrationViewModel
                     .onboardingCompletedFlow
                     .collectAsState(initial = null)
 
@@ -41,7 +38,7 @@ class MainActivity : ComponentActivity() {
                         null -> LoadingScreen()
                         false -> OnboardingNavigation(
                             onFinish = {
-                                onboardingViewModel.completeOnboarding()
+                                registrationViewModel.completeOnboarding()
                             }
                         )
                         true -> AppNavigation()

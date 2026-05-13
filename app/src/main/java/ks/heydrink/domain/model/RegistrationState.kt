@@ -21,3 +21,4 @@ data class AvatarStep(
         const val UNSELECTED = -1
     }
 }
+

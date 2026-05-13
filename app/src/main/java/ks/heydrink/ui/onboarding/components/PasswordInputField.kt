@@ -13,7 +13,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
@@ -31,7 +30,7 @@ fun PasswordInputField(
 ) {
     var visible by remember { mutableStateOf(false) } // состояние, которое хранит, показывать пароль или нет, сохраняет это значение между перерисовками
 
-    LoginInputField(
+    InputField(
         value = value,
         onValueChange = onValueChange,
         hint = hint,

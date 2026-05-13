@@ -7,18 +7,18 @@ import ks.heydrink.domain.model.AvatarStep
 import ks.heydrink.domain.model.PasswordStep
 import ks.heydrink.domain.model.RegistrationState
 import ks.heydrink.domain.model.UsernameStep
-import ks.heydrink.ui.onboarding.OnboardingViewModel
+import ks.heydrink.ui.onboarding.RegistrationViewModel
 
 @Composable
 
 fun RegistrationScreen() {
 
-    val viewModel: OnboardingViewModel = hiltViewModel()
+    val viewModel: RegistrationViewModel = hiltViewModel()
     val state: RegistrationState = viewModel.stateFlow.collectAsState().value
 
     when (state) {
         is UsernameStep -> {
-            TakeNameScreen(onNextClick = {}, onBackClick = {}, state = state)
+            TakeNameScreen(onNextClick = {}, onBackClick = {}, currentState = state, viewModel = viewModel)
         }
 
         is PasswordStep -> {

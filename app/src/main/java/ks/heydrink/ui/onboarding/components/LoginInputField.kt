@@ -22,7 +22,7 @@ import ks.heydrink.ui.theme.colorBlue
 import ks.heydrink.ui.theme.colorPurple
 
 @Composable
-fun LoginInputField(
+fun InputField(
     modifier: Modifier = Modifier,
     value: String,
     hint: String,
