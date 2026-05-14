@@ -18,15 +18,16 @@ import ks.heydrink.domain.model.RegistrationIntent
 import ks.heydrink.domain.model.RegistrationState
 import ks.heydrink.domain.model.UsernameStep
 import ks.heydrink.domain.repository.OnboardingRepository
+import ks.heydrink.ui.onboarding.screens.CanProcessIntent
 import javax.inject.Inject
 
 @HiltViewModel
-class RegistrationViewModel @Inject constructor(private val repo: OnboardingRepository) : ViewModel() {
+class RegistrationViewModel @Inject constructor(private val repo: OnboardingRepository) : ViewModel(), CanProcessIntent {
 
     val onboardingCompletedFlow: StateFlow<Boolean?> = repo.onboardingCompleted
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
 
-    private val _stateFlow = MutableStateFlow<RegistrationState>(UsernameStep(""))
+    private val _stateFlow = MutableStateFlow<RegistrationState>(PasswordStep(""))
     val stateFlow: StateFlow<RegistrationState> = _stateFlow
 
     fun completeOnboarding() {
@@ -51,5 +52,9 @@ class RegistrationViewModel @Inject constructor(private val repo: OnboardingRepo
 
             CheckUsernameTaken -> TODO()
         }
+    }
+
+    override fun processIntent(intent: RegistrationIntent) {
+        onNewIntent(intent)
     }
 }

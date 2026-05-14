@@ -1,5 +1,6 @@
 package ks.heydrink.ui.onboarding.screens
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -10,10 +11,6 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -22,18 +19,25 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ks.heydrink.R
+import ks.heydrink.domain.model.ChangePassword
+import ks.heydrink.domain.model.PasswordStep
+import ks.heydrink.domain.model.RegistrationIntent
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
 import ks.heydrink.ui.onboarding.components.OnboardingButton
 import ks.heydrink.ui.onboarding.components.PasswordInputField
 import ks.heydrink.ui.onboarding.components.TitleOnboardingTextStyle
 
+interface CanProcessIntent {
+    fun processIntent(intent: RegistrationIntent)
+}
+
 @Composable
 fun TakePasswordScreen(
     onNextClick: () -> Unit,
-    onBackClick: () -> Unit
-) {
-    var text by remember { mutableStateOf("") }
-
+    onBackClick: () -> Unit,
+    currentState: PasswordStep,
+    сюдаСлатьНовыеИнтенты: CanProcessIntent
+): Unit {
     Box(modifier = Modifier.fillMaxSize()) {
 
         Image(
@@ -69,8 +73,11 @@ fun TakePasswordScreen(
                 text = stringResource(id = R.string.take_password_description)
             )
             PasswordInputField(
-                value = text,
-                onValueChange = { text = it },
+                value = currentState.password,
+                onValueChange = { newText: String ->
+                    val intentNewText: RegistrationIntent = ChangePassword(newText)
+                    сюдаСлатьНовыеИнтенты.processIntent(intentNewText)
+                },
                 modifier = Modifier,
                 hint = stringResource(id = R.string.take_password_hint)
             )
@@ -87,6 +94,15 @@ fun TakePasswordScreen(
 
 @Preview
 @Composable
-fun TakePasswordScreenPreview() {
-    TakePasswordScreen(onNextClick = {}, onBackClick = {})
+private fun TakePasswordScreenPreview() {
+    TakePasswordScreen(
+        { },
+        { },
+        PasswordStep(""),
+        object:CanProcessIntent{
+            override fun processIntent(intent: RegistrationIntent) {
+                TODO("Not yet implemented")
+            }
+        }
+    )
 }

@@ -30,10 +30,7 @@ fun OnboardingNavigation(
             RegistrationScreen() // fixme
         }
         composable("take_password") {
-            TakePasswordScreen(
-                onNextClick = { },
-                onBackClick = { navController.popBackStack() }
-            )
+            RegistrationScreen() // fixme
         }
     }
 }
