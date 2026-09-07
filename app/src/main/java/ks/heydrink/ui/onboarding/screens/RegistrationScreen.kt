@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import ks.heydrink.domain.model.AvatarStep
+import ks.heydrink.domain.model.NextClickIntent
 import ks.heydrink.domain.model.PasswordStep
 import ks.heydrink.domain.model.RegistrationIntent
 import ks.heydrink.domain.model.RegistrationState
@@ -21,7 +22,11 @@ fun RegistrationScreen() {
 
     when (state) {
         is UsernameStep -> {
-            TakeNameScreen(onNextClick = {}, onBackClick = {}, currentState = state, viewModel = viewModel)
+            TakeNameScreen(
+                onNextClick = { viewModel.onNewIntent(NextClickIntent) },
+                onBackClick = {},
+                currentState = state,
+                viewModel = viewModel)
         }
 
         is PasswordStep -> {

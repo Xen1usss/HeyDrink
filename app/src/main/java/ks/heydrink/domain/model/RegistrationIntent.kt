@@ -2,16 +2,20 @@ package ks.heydrink.domain.model
 
 sealed interface RegistrationIntent
 
-data object CheckUsernameTaken: RegistrationIntent
+data object CheckUsernameTakenIntent: RegistrationIntent
 
-data class NewUsernameIntent(
+data class ChangeUsernameIntent(
     val newUsername: String,
 ): RegistrationIntent
 
-data class ChangePassword(
+data class ChangePasswordIntent(
     val newPassword: String,
 ):  RegistrationIntent
 
-data class ChangeAvatar(
+data class ChangeAvatarIntent(
     val newAvatar: Int,
 ):  RegistrationIntent
+
+data object NextClickIntent: RegistrationIntent
+
+data object BackClickIntent: RegistrationIntent

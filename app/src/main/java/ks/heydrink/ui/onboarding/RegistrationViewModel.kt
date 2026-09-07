@@ -1,5 +1,6 @@
 package ks.heydrink.ui.onboarding
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -9,10 +10,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import ks.heydrink.domain.model.AvatarStep
-import ks.heydrink.domain.model.ChangeAvatar
-import ks.heydrink.domain.model.ChangePassword
-import ks.heydrink.domain.model.NewUsernameIntent
-import ks.heydrink.domain.model.CheckUsernameTaken
+import ks.heydrink.domain.model.BackClickIntent
+import ks.heydrink.domain.model.ChangeAvatarIntent
+import ks.heydrink.domain.model.ChangePasswordIntent
+import ks.heydrink.domain.model.ChangeUsernameIntent
+import ks.heydrink.domain.model.CheckUsernameTakenIntent
+import ks.heydrink.domain.model.NextClickIntent
 import ks.heydrink.domain.model.PasswordStep
 import ks.heydrink.domain.model.RegistrationIntent
 import ks.heydrink.domain.model.RegistrationState
@@ -27,7 +30,7 @@ class RegistrationViewModel @Inject constructor(private val repo: OnboardingRepo
     val onboardingCompletedFlow: StateFlow<Boolean?> = repo.onboardingCompleted
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
 
-    private val _stateFlow = MutableStateFlow<RegistrationState>(PasswordStep(""))
+    private val _stateFlow = MutableStateFlow<RegistrationState>(UsernameStep(""))
     val stateFlow: StateFlow<RegistrationState> = _stateFlow
 
     fun completeOnboarding() {
@@ -38,19 +41,37 @@ class RegistrationViewModel @Inject constructor(private val repo: OnboardingRepo
 
     fun onNewIntent(intent: RegistrationIntent) {
         when (intent) {
-            is NewUsernameIntent -> {
+            is ChangeUsernameIntent -> {
                 _stateFlow.value = UsernameStep(intent.newUsername, null)
             }
 
-            is ChangePassword -> {
+            is ChangePasswordIntent -> {
                 _stateFlow.value = PasswordStep(intent.newPassword)
             }
 
-            is ChangeAvatar -> {
+            is ChangeAvatarIntent -> {
                 _stateFlow.value = AvatarStep(intent.newAvatar)
             }
 
-            CheckUsernameTaken -> TODO()
+            is NextClickIntent -> {
+                if (_stateFlow.value is UsernameStep) {
+                    val passwordStep: PasswordStep = PasswordStep("")
+                    _stateFlow.value = passwordStep
+                } else if (_stateFlow.value is PasswordStep){
+                    val avatarStep: AvatarStep = AvatarStep()
+                    _stateFlow.value = avatarStep
+                } else {
+                    Log.d("RegistrationViewModel","NextClickIntent mistake")
+                }
+            }
+
+            is BackClickIntent -> {
+                if (_stateFlow.value is PasswordStep) {
+                    _stateFlow.value = UsernameStep("")
+                }
+            }
+
+            CheckUsernameTakenIntent -> TODO()
         }
     }
 

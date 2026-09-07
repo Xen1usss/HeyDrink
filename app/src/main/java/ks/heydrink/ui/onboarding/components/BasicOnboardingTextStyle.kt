@@ -8,6 +8,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import ks.heydrink.ui.theme.MontserratAlternates
 
 @Composable
 fun BasicOnboardingTextStyle(
@@ -18,7 +19,7 @@ fun BasicOnboardingTextStyle(
         text = text,
         fontSize = 13.sp,
         fontWeight = FontWeight.Medium,
-        fontFamily = FontFamily.Default,//MontserratAlternates,
+        fontFamily = MontserratAlternates,
         textAlign = TextAlign.Center,
         modifier = modifier.wrapContentWidth()
     )

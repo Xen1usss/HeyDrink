@@ -1,6 +1,5 @@
 package ks.heydrink.ui.onboarding.screens
 
-import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -19,7 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ks.heydrink.R
-import ks.heydrink.domain.model.ChangePassword
+import ks.heydrink.domain.model.ChangePasswordIntent
 import ks.heydrink.domain.model.PasswordStep
 import ks.heydrink.domain.model.RegistrationIntent
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
@@ -75,7 +74,7 @@ fun TakePasswordScreen(
             PasswordInputField(
                 value = currentState.password,
                 onValueChange = { newText: String ->
-                    val intentNewText: RegistrationIntent = ChangePassword(newText)
+                    val intentNewText: RegistrationIntent = ChangePasswordIntent(newText)
                     сюдаСлатьНовыеИнтенты.processIntent(intentNewText)
                 },
                 modifier = Modifier,

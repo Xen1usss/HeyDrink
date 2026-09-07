@@ -23,7 +23,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ks.heydrink.R
-import ks.heydrink.domain.model.NewUsernameIntent
+import ks.heydrink.domain.model.ChangeUsernameIntent
 import ks.heydrink.domain.model.UsernameStep
 import ks.heydrink.ui.onboarding.RegistrationViewModel
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
@@ -79,7 +79,7 @@ fun TakeNameScreen(
             ) {
                 InputField(
                     value = currentState.username,
-                    onValueChange = { viewModel.onNewIntent(NewUsernameIntent(it)) },
+                    onValueChange = { viewModel.onNewIntent(ChangeUsernameIntent(it)) },
                     hint = stringResource(id = R.string.take_name_hint)
                 )
                 TextButton(
