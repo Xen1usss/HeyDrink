@@ -83,7 +83,8 @@ fun TakeNameScreen(
                 InputField(
                     value = currentState.username,
                     onValueChange = { viewModel.onNewIntent(ChangeUsernameIntent(it)) },
-                    hint = stringResource(id = R.string.take_name_hint)
+                    hint = stringResource(id = R.string.take_name_hint),
+                    isError = currentState.validationResult?.isSuccess == false
                 )
                 if (currentState.validationResult?.isSuccess == false) {
                     val listMistakes = currentState.validationResult.failures
