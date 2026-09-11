@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import ks.heydrink.domain.UserNameValidateUseCase
 import ks.heydrink.domain.model.AvatarStep
 import ks.heydrink.domain.model.BackClickIntent
 import ks.heydrink.domain.model.ChangeAvatarIntent
@@ -25,7 +26,10 @@ import ks.heydrink.ui.onboarding.screens.CanProcessIntent
 import javax.inject.Inject
 
 @HiltViewModel
-class RegistrationViewModel @Inject constructor(private val repo: OnboardingRepository) : ViewModel(), CanProcessIntent {
+class RegistrationViewModel @Inject constructor(
+    private val repo: OnboardingRepository,
+    private val userNameValidate: UserNameValidateUseCase
+) : ViewModel(), CanProcessIntent {
 
     val onboardingCompletedFlow: StateFlow<Boolean?> = repo.onboardingCompleted
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
@@ -42,7 +46,8 @@ class RegistrationViewModel @Inject constructor(private val repo: OnboardingRepo
     fun onNewIntent(intent: RegistrationIntent) {
         when (intent) {
             is ChangeUsernameIntent -> {
-                _stateFlow.value = UsernameStep(intent.newUsername, null)
+                _stateFlow.value =
+                    UsernameStep(intent.newUsername, userNameValidate(intent.newUsername))
             }
 
             is ChangePasswordIntent -> {

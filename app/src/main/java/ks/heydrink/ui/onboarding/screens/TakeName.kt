@@ -82,6 +82,11 @@ fun TakeNameScreen(
                     onValueChange = { viewModel.onNewIntent(ChangeUsernameIntent(it)) },
                     hint = stringResource(id = R.string.take_name_hint)
                 )
+                if (currentState.isUsernameValid == false) {
+                    Text(
+                        text = "Не хватает буков"
+                    )
+                }
                 TextButton(
                     onClick = { }
                 ) {
@@ -102,7 +107,8 @@ fun TakeNameScreen(
             onClick = onNextClick,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
-                .padding(bottom = 140.dp)
+                .padding(bottom = 140.dp),
+            enabled = currentState.isUsernameValid == true
         )
     }
 }
