@@ -24,6 +24,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ks.heydrink.R
 import ks.heydrink.domain.model.ChangeUsernameIntent
+import ks.heydrink.domain.model.NotEnoughDigit
+import ks.heydrink.domain.model.NotEnoughLetter
+import ks.heydrink.domain.model.TooShort
 import ks.heydrink.domain.model.UsernameStep
 import ks.heydrink.ui.onboarding.RegistrationViewModel
 import ks.heydrink.ui.onboarding.components.BasicOnboardingTextStyle
@@ -82,10 +85,24 @@ fun TakeNameScreen(
                     onValueChange = { viewModel.onNewIntent(ChangeUsernameIntent(it)) },
                     hint = stringResource(id = R.string.take_name_hint)
                 )
-                if (currentState.isUsernameValid == false) {
-                    Text(
-                        text = "Не хватает буков"
-                    )
+                if (currentState.validationResult?.isSuccess == false) {
+                    val listMistakes = currentState.validationResult.failures
+                    if (listMistakes.any { it is NotEnoughLetter }) {
+                        Text(
+                            text = "Не хватает буков"
+                        )
+                    } else
+                        if (listMistakes.any { it is NotEnoughDigit }) {
+                            Text(
+                                text = "Не хватает цифор"
+                            )
+                        } else
+                            if (listMistakes.any { it is TooShort }) {
+                                Text(
+                                    text = "Не хватает символов"
+                                )
+                            }
+
                 }
                 TextButton(
                     onClick = { }
@@ -108,7 +125,7 @@ fun TakeNameScreen(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 140.dp),
-            enabled = currentState.isUsernameValid == true
+            enabled = currentState.validationResult?.isSuccess == true
         )
     }
 }

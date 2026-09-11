@@ -6,7 +6,7 @@ data object Loading : RegistrationState
 
 data class UsernameStep(
     val username: String,
-    val isUsernameValid: Boolean? = null,
+    val validationResult: ValidationResult? = null,
 ) : RegistrationState
 
 data class PasswordStep(
